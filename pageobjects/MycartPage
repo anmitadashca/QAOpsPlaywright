@@ -1,0 +1,18 @@
+const {expect}=require('@playwright/test');
+class MycartPage{
+    constructor(page){
+        this.page=page;
+        this.productTitle=page.locator("h3:has-text('ZARA COAT 3')");
+        this.checkoutBtn=page.locator("text=Checkout");
+        
+}
+async validateProductInCart(productName){
+        await this.page.locator("div li").first().waitFor();
+        expect(await this.getProductLocator(productName).isVisible()).toBeTruthy();
+        await this.checkoutBtn.click();
+}
+getProductLocator(productName){
+    return this.page.locator("h3:has-text('"+productName+"')");
+}
+}
+module.exports={MycartPage};
