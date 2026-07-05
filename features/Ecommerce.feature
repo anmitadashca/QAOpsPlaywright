@@ -15,3 +15,4 @@ Feature: Ecommerce Validation
       | username    | password  |
       | rahulshetty | Abcde123@ |
       |AnmitaDash   | 123456    | 
+      |AnmitaDash123| 123456    | 
