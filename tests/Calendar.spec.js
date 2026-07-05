@@ -18,6 +18,7 @@ test('Calendar test', async ({ page }) => {
     await newPage.getByText(yearNumber).click();
     await newPage.locator(".react-calendar__year-view__months__month").nth(Number(monthNumber)-1).click();
     await newPage.locator("//abbr[text()='" + dateNumber + "']").click();
+    //calender test changes for anmita_fixes
     const inputs= await newPage.locator(".react-date-picker__inputGroup__input");
 
     for(let i=0;i<expectedList.length;i++){
